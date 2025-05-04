@@ -97,8 +97,7 @@ def boot_animation():
     ]
     for step in steps:
         slow_type(step, 0.015)
-        time.sleep(0.2)
-        
+        time.sleep(0.2)  
     time.sleep(1.5)
     cls()
     time.sleep(1)
@@ -113,7 +112,7 @@ def boot_animation():
     cls()
     time.sleep(1)
 
-# realtime generator nonsense
+# realtime nonsense generator
 def log_ip():
     return f"[LOG] Connecting to {random.randint(10,255)}.{random.randint(0,255)}.{random.randint(0,255)}.{random.randint(1,254)}"
 
