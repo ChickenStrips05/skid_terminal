@@ -18,14 +18,15 @@ def cls():
     os.system("cls")
 
 def play_beep():
-    winsound.Beep(random.randint(600, 1200), 100)
+        winsound.Beep(random.randint(600, 1200), 100)
 
 def generate_hex_line(length=32):
     return ' '.join(random.choice(hex_chars) + random.choice(hex_chars) for _ in range(length))
 
-def slow_type(text, delay=0.02):
+def slow_type(text, delay=0.02, beep=False):
     for char in text:
         sys.stdout.write(char)
+        
         sys.stdout.flush()
         time.sleep(delay)
     print()
@@ -97,9 +98,11 @@ def boot_animation():
     for step in steps:
         slow_type(step, 0.015)
         time.sleep(0.2)
+        
     time.sleep(1.5)
     cls()
     time.sleep(1)
+    play_beep()
     slow_type("Thank you for purchasing Skid Terminal.",0.03)
     time.sleep(1)
     cls()
@@ -263,11 +266,13 @@ actions = [
     fake_command,fake_command,
     simulate_trace]
 
+
 # Startup
 cls()
 fake_login_sequence()
 cls()
 boot_animation()
+
 
 
 try:
